@@ -25,7 +25,6 @@ PROCENT_CHANGE = 0.99
 def check_tokens():
     """Проверяем наличие токенов."""
     CHECK_TOKENS = {
-        'practicum_token': PRACTICUM_TOKEN,
         'telegram_token': TELEGRAM_TOKEN,
         'telegram_chat_id': TELEGRAM_CHAT_ID,
         'api_key': API_KEY,
