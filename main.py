@@ -57,11 +57,9 @@ def get_api_answer(client):
             "BNBBUSD",
             Client.KLINE_INTERVAL_1HOUR,
             "1 hour ago UTC")
-        if klines.status_code != HTTPStatus.OK:
-            klines.raise_for_status()
         return klines
     except requests.exceptions.RequestException:
-        message = f'Ошибка при запросе к API. {klines.status_code}'
+        message = f'Ошибка при запросе к API.'
         logging.error(message)
     except requests.exceptions.RequestException as error:
         message = 'Ошибка при запросе к API.'
