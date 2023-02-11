@@ -13,10 +13,9 @@ from exceptions import OurRequestError, NotSendmessageException
 load_dotenv()
 
 
-PRACTICUM_TOKEN = os.getenv('TOKEN_HW')
 TELEGRAM_TOKEN = os.getenv('TOKEN')
 TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_ID')
-API_KEY = os.getenv('TOKEN')
+API_KEY = os.getenv('API_TOKEN')
 API_SECRET = os.getenv('SEKRET_KEY')
 
 RETRY_PERIOD = 60
