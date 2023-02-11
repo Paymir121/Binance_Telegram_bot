@@ -2,7 +2,6 @@ import logging
 import os
 import sys
 from http import HTTPStatus
-
 import requests
 import time
 import telegram
@@ -20,7 +19,7 @@ TELEGRAM_CHAT_ID = os.getenv('TELEGRAM_ID')
 API_KEY = os.getenv('TOKEN')
 API_SECRET = os.getenv('SEKRET_KEY')
 
-RETRY_PERIOD = 600
+RETRY_PERIOD = 60
 PROCENT_CHANGE = 0.99
 
 
@@ -89,8 +88,6 @@ def main():
                 if now_price > max_price * PROCENT_CHANGE:
                     message = (f"Динь-дон, цена упала и составляет {now_price}. Это {now_price*100/max_price:.2f}% от максимума")
                     send_message(bot, message)
-                else:
-                    logging.info("No new homework found")
             except Exception as error:
                 message = f'Сбой в работе программы: {error}'
                 send_message(bot, message)
